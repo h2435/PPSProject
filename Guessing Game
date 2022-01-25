@@ -1,0 +1,39 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+void guess(int N)
+{
+    int number, guess, numberofguess = 0;
+    printf("Guess a number between" " 1 and %d\n",  N);
+    do
+     {
+        if (numberofguess > 9)
+        {
+            printf("\nYou have run out of chances!!\n");
+            printf("Better luck next time!!\n");
+            printf("Winning is not everything but wanting to win is :) !!");
+            break;
+        }
+        scanf("%d", &guess);
+        if (guess > number)
+        {
+            printf("Number is too high! Try again..\n");
+            numberofguess++;
+        }
+        else if (number > guess)
+        {
+            printf("Number is too low! Try again..\n");
+            numberofguess++;
+        }
+        else
+            printf( "You guessed the" " number in %d "  "attempts"" HURRAY...YOU WON! GOOD GAME :) !! \n",numberofguess);
+
+    }
+    while (guess != number);
+}
+int main()
+{
+    int N = 100;
+    guess(N);
+    return 0;
+}
